@@ -1,0 +1,33 @@
+package com.example.demo.entity;
+
+import jakarta.persistence.*;
+import java.time.LocalDateTime;
+
+@Entity
+public class Appointment {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "patient_id", nullable = false)
+    private Patient patient;
+
+    @ManyToOne
+    @JoinColumn(name = "doctor_id", nullable = false)
+    private User doctor;
+
+    private LocalDateTime appointmentDate;
+
+    private String purpose;
+
+    @Enumerated(EnumType.STRING)
+    private Status status = Status.PENDING;
+
+    // Getters and Setters
+
+    public enum Status {
+        PENDING, CONFIRMED, CANCELLED
+    }
+}

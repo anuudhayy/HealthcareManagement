@@ -1,0 +1,26 @@
+<div class="card shadow-sm">
+  <div class="card-header bg-success text-white">
+    <h4>Book an Appointment</h4>
+  </div>
+  <div class="card-body">
+    <form>
+      <div class="mb-3">
+        <label for="patient" class="form-label">Patient Name</label>
+        <input type="text" class="form-control" id="patient" placeholder="Enter patient name" required>
+      </div>
+      <div class="mb-3">
+        <label for="doctor" class="form-label">Select Doctor</label>
+        <select class="form-select" id="doctor">
+          <option selected>Choose...</option>
+          <option value="1">Dr. Smith</option>
+          <option value="2">Dr. Jane</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="date" class="form-label">Appointment Date & Time</label>
+        <input type="datetime-local" class="form-control" id="date" required>
+      </div>
+      <button type="submit" class="btn btn-success">Book Appointment</button>
+    </form>
+  </div>
+</div>
